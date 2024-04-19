@@ -351,11 +351,11 @@ class FlutterBluePlus {
   static Future<void> stopScan() async {
     _Mutex mtx = _MutexFactory.getMutexForKey("scan");
     await mtx.take();
-    if (isScanningNow) {
+    // if (isScanningNow) {
       await _stopScan();
-    } else if (_logLevel.index >= LogLevel.info.index) {
-      print("[FBP] stopScan: already stopped");
-    }
+    // } else if (_logLevel.index >= LogLevel.info.index) {
+    //   print("[FBP] stopScan: already stopped");
+    // }
     mtx.give();
   }
 
